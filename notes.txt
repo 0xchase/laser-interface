@@ -5,3 +5,7 @@ Auto populate lasers table
 Redo theme
 Redo layout
 
+Glasses representation per lab location
+
+
+Columns for lab locations (front, back, side), names labeled on map
