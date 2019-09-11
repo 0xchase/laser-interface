@@ -1,0 +1,7 @@
+Parse CSV file for glasses information
+Parse CSV file for laser information
+Auto populate glasses table
+Auto populate lasers table
+Redo theme
+Redo layout
+
