@@ -26,6 +26,10 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
     def btnclicked(self):
         self.freqs = []
 
+        self.freqszone1 = []
+        self.freqszone2 = []
+
+
         self.glasses1transparent.hide()
         self.glasses2transparent.hide()
         self.glasses3transparent.hide()
@@ -75,7 +79,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         for f in self.freqs:
             s += str(f) + " nm<br>"
         self.freqlist.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(s) + "</span></p></body></html>")
-        
+
         self.warning.hide()
 
         if (self.glasses1transparent.isVisible() and

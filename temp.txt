@@ -1,0 +1,5 @@
+Resources for decompilation???
+Kind of vauge, differnces between compilation and decompilation.
+Why should I use a functional programming language??? Ocaml
+Is a full on IR necessary??? Vex???
+Static analysis class???
