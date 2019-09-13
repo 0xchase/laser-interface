@@ -32,29 +32,51 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.glasses4transparent.hide()
         self.glasses5transparent.hide()
 
+
+        self.glasses1transparent2.hide()
+        self.glasses2transparent2.hide()
+        self.glasses3transparent2.hide()
+        self.glasses4transparent2.hide()
+        self.glasses5transparent2.hide()
+
+        self.zone1red.hide()
+        self.zone2red.hide()
+
         if self.laser1.isChecked():
             self.freqs.append(300)
             self.glasses1transparent.show()
             self.glasses2transparent.show()
             self.glasses5transparent.show()
+            self.zone1red.show()
         if self.laser2.isChecked():
             self.freqs.append(400)
-            self.glasses2transparent.show()
+            self.glasses1transparent.show()
+            self.glasses3transparent.show()
             self.glasses4transparent.show()
+            self.zone1red.show()
         if self.laser3.isChecked():
             self.freqs.append(500)
-            self.glasses3transparent.show()
+            self.glasses1transparent2.show()
+            self.glasses2transparent2.show()
+            self.glasses4transparent2.show()
+            self.zone2red.show()
         if self.laser4.isChecked():
+            self.glasses1transparent2.show()
+            self.glasses3transparent2.show()
             self.freqs.append(600)
-            self.glasses4transparent.show()
+            self.zone2red.show()
         if self.laser5.isChecked():
+            self.glasses1transparent2.show()
+            self.glasses5transparent2.show()
             self.freqs.append(700)
-            self.glasses5transparent.show()
+            self.zone2red.show()
 
         s = ""
         for f in self.freqs:
             s += str(f) + " nm<br>"
         self.freqlist.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(s) + "</span></p></body></html>")
+        
+        self.warning.hide()
 
         if (self.glasses1transparent.isVisible() and
             self.glasses2transparent.isVisible() and
@@ -63,8 +85,14 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             self.glasses5transparent.isVisible()):
             print("Warning")
             self.warning.show()
-        else:
-            self.warning.hide()
+
+        if (self.glasses1transparent2.isVisible() and
+            self.glasses2transparent2.isVisible() and
+            self.glasses3transparent2.isVisible() and
+            self.glasses4transparent2.isVisible() and
+            self.glasses5transparent2.isVisible()):
+            print("Warning")
+            self.warning.show()
 
     def parse(self):
         print("Parsing files...")
