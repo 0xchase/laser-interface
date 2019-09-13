@@ -21,6 +21,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.freqs = []
 
         self.btnclicked()
+        self.parse()
 
     def btnclicked(self):
         self.freqs = []
@@ -52,8 +53,8 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
         s = ""
         for f in self.freqs:
-            s += str(f) + "\n"
-        self.freqlist.setText(str(s))
+            s += str(f) + " nm<br>"
+        self.freqlist.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(s) + "</span></p></body></html>")
 
         if (self.glasses1transparent.isVisible() and
             self.glasses2transparent.isVisible() and
@@ -64,6 +65,30 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             self.warning.show()
         else:
             self.warning.hide()
+
+    def parse(self):
+        print("Parsing files...")
+
+        text = ""
+        with open("data/glasses.txt", "r") as f:
+            text = f.read()
+
+        lines = text.split("\n")
+
+        print("Glasses:")
+        for line in lines:
+            print(line)
+
+        with open("data/lasers.txt", "r") as f:
+            text = f.read()
+
+        lines = text.split("\n")
+
+        print("Lasers:")
+        for line in lines:
+            print(line)
+
+
 
 
 def main():
