@@ -1,14 +1,33 @@
 #!/usr/bin/python3
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import *
 import sys
 import Interface
+import lasers
+from lasers import *
 
 class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
     def __init__(self, parent=None):
         super(ExampleApp, self).__init__(parent)
         self.setupUi(self)
+
+        x = 0
+        y = -1
+        for laser in lasers:
+            laser.label = QLabel(laser.name)
+            laser.label.setText(laser.name)
+            self.lasernames.addWidget(laser.label)
+            y += 1
+            x = 0
+
+            for stage in laser.stages:
+                stage.button = QPushButton(laser.name + stage.name)
+                stage.button.setCheckable(True)
+                stage.button.setText(stage.name)
+                stage.button.clicked.connect(self.btnclicked)
+                self.lasergrid.addWidget(stage.button, x, y)
+                x += 1
 
         self.laser1.clicked.connect(self.btnclicked)
         self.laser2.clicked.connect(self.btnclicked)
@@ -21,7 +40,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.freqs = []
 
         self.btnclicked()
-        self.parse()
+
 
     def btnclicked(self):
         self.freqs = []
@@ -87,7 +106,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             self.glasses3transparent.isVisible() and
             self.glasses4transparent.isVisible() and
             self.glasses5transparent.isVisible()):
-            print("Warning")
+            #print("Warning")
             self.warning.show()
 
         if (self.glasses1transparent2.isVisible() and
@@ -95,32 +114,8 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             self.glasses3transparent2.isVisible() and
             self.glasses4transparent2.isVisible() and
             self.glasses5transparent2.isVisible()):
-            print("Warning")
+            #print("Warning")
             self.warning.show()
-
-    def parse(self):
-        print("Parsing files...")
-
-        text = ""
-        with open("data/glasses.txt", "r") as f:
-            text = f.read()
-
-        lines = text.split("\n")
-
-        print("Glasses:")
-        for line in lines:
-            print(line)
-
-        with open("data/lasers.txt", "r") as f:
-            text = f.read()
-
-        lines = text.split("\n")
-
-        print("Lasers:")
-        for line in lines:
-            print(line)
-
-
 
 
 def main():
