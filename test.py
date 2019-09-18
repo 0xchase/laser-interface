@@ -12,28 +12,51 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         super(ExampleApp, self).__init__(parent)
         self.setupUi(self)
 
+        icon = QtGui.QIcon("")
+        icon.addPixmap(QtGui.QPixmap("images/unchecked2.png"))
+        icon.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Disabled)
+        icon.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Active)
+        icon.addPixmap(QtGui.QPixmap("images/checked2.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+
         x = 0
         y = -1
         for laser in lasers:
             laser.label = QLabel(laser.name)
-            laser.label.setText(laser.name)
+            laser.label.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.name + "</span></p></body></html>")
+
             self.lasernames.addWidget(laser.label)
+
+            laser.button = QPushButton(laser.name + "_onoff")
+            laser.button.setText("")
+            laser.button.setGeometry(200, 200, 200, 200)
+            laser.button.clicked.connect(self.btnclicked)
+            laser.button.setIconSize(QtCore.QSize(35, 35))
+            laser.button.setCheckable(True)
+            laser.button.setFlat(True)
+            laser.button.setIcon(icon)
+            laser.button.setStyleSheet("background-color: rgb(50, 56, 69)")
+
+            self.laseronoff.addWidget(laser.button)
+
             y += 1
             x = 0
 
             for stage in laser.stages:
-                stage.button = QPushButton(laser.name + stage.name)
+                stage.button = QPushButton(laser.name + stage.name + "_stage")
+                stage.button.setText("")
+                stage.button.flat = True
                 stage.button.setCheckable(True)
-                stage.button.setText(stage.name)
-                stage.button.clicked.connect(self.btnclicked)
-                self.lasergrid.addWidget(stage.button, x, y)
-                x += 1
+                stage.button.setFlat(True)
+                stage.button.setIcon(icon)
+                stage.button.setStyleSheet("background-color: rgb(50, 56, 69)")
 
-        self.laser1.clicked.connect(self.btnclicked)
-        self.laser2.clicked.connect(self.btnclicked)
-        self.laser3.clicked.connect(self.btnclicked)
-        self.laser4.clicked.connect(self.btnclicked)
-        self.laser5.clicked.connect(self.btnclicked)
+                #stage.button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+                stage.button.setGeometry(200, 200, 200, 200)
+                stage.button.clicked.connect(self.btnclicked)
+                stage.button.setIconSize(QtCore.QSize(35, 35))
+
+                self.lasergrid.addWidget(stage.button, y, x)
+                x += 1
 
         self.warning.hide()
 
@@ -43,11 +66,22 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
 
     def btnclicked(self):
-        self.freqs = []
+
+        print("Button clicked")
+
+        try:
+            button = self.sender()
+            print("Clicked: " + str(button))
+            if button.isChecked():
+                print("Set button on")
+            else:
+                print("Set button off")
+        except Exception as e:
+            print(e)
+
 
         self.freqszone1 = []
         self.freqszone2 = []
-
 
         self.glasses1transparent.hide()
         self.glasses2transparent.hide()
@@ -62,44 +96,59 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.glasses4transparent2.hide()
         self.glasses5transparent2.hide()
 
-        self.zone1red.hide()
-        self.zone2red.hide()
+        self.zonelred.hide()
+        self.zonebred.hide()
 
-        if self.laser1.isChecked():
-            self.freqs.append(300)
-            self.glasses1transparent.show()
-            self.glasses2transparent.show()
-            self.glasses5transparent.show()
-            self.zone1red.show()
-        if self.laser2.isChecked():
-            self.freqs.append(400)
-            self.glasses1transparent.show()
-            self.glasses3transparent.show()
-            self.glasses4transparent.show()
-            self.zone1red.show()
-        if self.laser3.isChecked():
-            self.freqs.append(500)
-            self.glasses1transparent2.show()
-            self.glasses2transparent2.show()
-            self.glasses4transparent2.show()
-            self.zone2red.show()
-        if self.laser4.isChecked():
-            self.glasses1transparent2.show()
-            self.glasses3transparent2.show()
-            self.freqs.append(600)
-            self.zone2red.show()
-        if self.laser5.isChecked():
-            self.glasses1transparent2.show()
-            self.glasses5transparent2.show()
-            self.freqs.append(700)
-            self.zone2red.show()
+        wavelengthsL = []
+        wavelengthsB = []
 
-        s = ""
-        for f in self.freqs:
-            s += str(f) + " nm<br>"
-        self.freqlist.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(s) + "</span></p></body></html>")
+        for laser in lasers:
+            if laser.button.isChecked():
+                for stage in laser.stages:
+                    if not stage.button.isChecked():
+                        if laser.zone == "Zone L":
+                            wavelengthsL.append(stage.wavelength)
+                        if laser.zone == "Zone B":
+                            wavelengthsB.append(stage.wavelength)
+
+        sl = ""
+        sb = ""
+        for w in wavelengthsB:
+            sb += str(w) + " nm<br>"
+        for w in wavelengthsL:
+            sl += str(w) + " nm<br>"
+        self.freqlistl.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sl) + "</span></p></body></html>")
+        self.freqlistb.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sb) + "</span></p></body></html>")
 
         self.warning.hide()
+
+        if len(wavelengthsL) > 0:
+            self.glasses1transparent.show()
+            self.zonebred.show()
+
+        for w in wavelengthsL:
+            if not (190 <= w <= 398 or 9000 <= w <= 11000):
+                self.glasses2transparent.show()
+            if not (190 <= w <= 400 or 808 <= w <= 840 or 840 <= w <= 950 or 950 <= w <= 1080 or 1080 <= w <= 1090):
+                self.glasses3transparent.show()
+            if not (190 <= w <= 400 or 651 <= w <= 670 or 671 <= w <= 715 or 680 <= w <= 710 or 690 <= w <= 700):
+                self.glasses4transparent.show()
+            if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
+                self.glasses5transparent.show()
+
+        if len(wavelengthsB) > 0:
+            self.glasses1transparent2.show()
+            self.zonebred.show()
+
+        for w in wavelengthsB:
+            if not (190 <= w <= 398 or 9000 <= w <= 11000):
+                self.glasses2transparent2.show()
+            if not (190 <= w <= 400 or 808 <= w <= 840 or 840 <= w <= 950 or 950 <= w <= 1080 or 1080 <= w <= 1090):
+                self.glasses3transparent2.show()
+            if not (190 <= w <= 400 or 651 <= w <= 670 or 671 <= w <= 715 or 680 <= w <= 710 or 690 <= w <= 700):
+                self.glasses4transparent2.show()
+            if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
+                self.glasses5transparent2.show()
 
         if (self.glasses1transparent.isVisible() and
             self.glasses2transparent.isVisible() and
