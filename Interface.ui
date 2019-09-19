@@ -1283,7 +1283,7 @@
       <x>1150</x>
       <y>90</y>
       <width>291</width>
-      <height>151</height>
+      <height>821</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="lasergrid">
@@ -1329,7 +1329,7 @@
       <x>880</x>
       <y>90</y>
       <width>121</width>
-      <height>151</height>
+      <height>821</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="lasernames">
@@ -1417,7 +1417,7 @@
       <x>1030</x>
       <y>90</y>
       <width>91</width>
-      <height>151</height>
+      <height>821</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="laseronoff">
