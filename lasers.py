@@ -2,10 +2,202 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 
+"""
+.. module:: lagona
+	:platform: Unix
+	:synopsis: Automated laser goggles nagging
+"""
+
 lasers = []
+
+class LaserContainmentArea:
+	"""Class to hold information about Laser Containment Areas (LCA) in the lab.
+	A single LaserBeamPath can span multiple LCAs.
+	Personal Protective Equipment (PPE) will be computed for each LCA.
+
+	:param name: LCA name
+	:param namev: verbose LCA name
+	"""
+	def __init__(self, name:str, namev:str=None):
+		self.name = name
+		self.namev = namev
+
+class LaserGlassesRange:
+	"""Class to hold optical attenuation data for laser glasses in a particular wavelength range.
+
+	:param low: lower wavelength in meters
+	:param high: upper wavelength in meters
+	:param lbd: is continuous wave (t > 0.25 s)
+	:param lbi: is pulsed mode (1 us < t < 0.25 s)
+	:param lbr: is giant pulsed mode (1 ns < t < 1 us)
+	:param lbm: is mode locked (t < 1 ns)
+	:param lbod: optical density
+
+	cf: https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=762
+	"""
+	def __init__(self, low:int, high:int , lbd:bool, lbi:bool, lbr:bool , lbm:bool, lbod:bool):
+		self.low = low
+		self.high = high
+		self.lbd = lbd
+		self.lbi = lbi
+		self.lbr = lbr
+		self.lbm = lbm
+		self.lbod = lbod
+
+class LaserGlasses:
+	"""Class to hold data about laser glasses.
+
+	:param name: name
+	:param mfg: manufacturer
+	:param pn: part number
+
+	"""
+	def __init__(self, name:str, mfg:str, pn:str):
+		self.name = name
+		self.mfg = mfg
+		self.pn = pn
+		self.bands = []
+
+	def add_band(self, range:LaserGlassesRange):
+		"""Add glasses performance in particular wavelength range.
+		"""
+		self.bands.append(range)
+
+# ====================== Classes ===========================
+
+class BeamStage:
+
+    """Class to hold data about a segment of a laser beam path.
+
+    :param name: path element name (eg f0, f2 for fundamental, second harmonic)
+    :param lca: laser containment area
+    :param wavelength: center wavelength in meters
+    :param avg_power: time-average power in watts
+    :param diameter_collimated: laser beam diameter when collimated in meters
+    :param pulse_t: pulse duration in seconds, None if CW
+    :param pulse_f_min: minimum repetition rate in Hertz, None if CW
+    :param pulse_f_max: maximum repetition rate in Hertz, None if CW
+    :param maker: manufacturer or maker of the laser path element
+    :param model: model number
+    """
+
+    def __init__(self, name:str, wavelength:float, avg_power:float, diameter_collimated:float=None,
+                pulse_t_min:float=None, pulse_t_max:float=None, pulse_f_min:float=None, pulse_f_max:float=None,
+                maker:str=None, model:str=None):
+        self.name = name
+        self.wavelength = wavelength
+        self.avg_power = avg_power
+
+        self.diameter_collimated = diameter_collimated
+        self.pulse_t_min = pulse_t_min
+        self.pulse_t_max = pulse_t_max
+        self.pulse_f_min = pulse_f_min
+        self.pulse_f_max = pulse_f_max
+        self.maker = maker
+        self.model = model
+
+class Laser:
+        def __init__(self, name:str, lca:str, zone:str, description:str=None):
+            self.name = name
+            self.lca = lca
+            self.description = description
+            self.stages = []
+            self.gui_elements = []
+            self.zone = zone
+
+        def add_beam_stage(self, beam_stage:BeamStage):
+            self.stages.append(beam_stage)
 
 def create_lasers():
     global lasers
+
+    laser1 = Laser("Ablation", "Britton", "Zone B", "This is the ablation laser")
+    laser1.add_beam_stage(
+		BeamStage(
+			name="Laser head",
+			wavelength=1064,
+			avg_power=30,
+			diameter_collimated=2e-3,
+            pulse_t_min=1e-9,
+			pulse_t_max=100e-9,
+			pulse_f_min=4000,
+			pulse_f_max=2e6,
+            maker="Spectra-Physics",
+			model="VPFL-ISP-POD-20-0062"))
+    laser1.add_beam_stage(
+		BeamStage(
+			name="Doubler box 1",
+			wavelength=1064,
+			avg_power=30,
+			diameter_collimated=2e-3,
+            pulse_t_min=1e-9,
+			pulse_t_max=100e-9,
+			pulse_f_min=4000,
+			pulse_f_max=2e6,
+            maker="Andrew",
+			model="Circa 2019"))
+    laser1.add_beam_stage(
+		BeamStage(
+			name="Doubler box 2",
+			wavelength=1064,
+			avg_power=30,
+			diameter_collimated=2e-3,
+	        pulse_t_min=1e-9,
+			pulse_t_max=100e-9,
+			pulse_f_min=4000,
+			pulse_f_max=2e6,
+	        maker="Andrew",
+			model="Circa 2019"))
+    laser1.add_beam_stage(
+		BeamStage(
+			name="Hucul West",
+			wavelength=1064,
+			avg_power=30,
+			diameter_collimated=2e-3,
+	        pulse_t_min=1e-9,
+			pulse_t_max=100e-9,
+			pulse_f_min=4000,
+			pulse_f_max=2e6,
+	        maker="Conner",
+			model="Circa 2019"))
+    lasers.append(laser1)
+
+
+    laser16 = Laser("Rb wavemeter ref", "Britton", "Zone B", "What is exact Rb line???")
+    laser16.add_beam_stage(
+		BeamStage(
+			name="Laser head",
+			wavelength=780,
+			avg_power=150e-3,
+			diameter_collimated=1e-3,
+            maker="Toptica",
+			model="Circa 2017"))
+    laser16.add_beam_stage(
+		BeamStage(
+			name="Laser head",
+			wavelength=780,
+			avg_power=100e-3,
+			diameter_collimated=1e-3,
+            maker="Joe Britton",
+			model="Circa 2017"))
+    laser16.add_beam_stage(
+		BeamStage(
+			name="Laser head",
+			wavelength=780,
+			avg_power=150e-3,
+			diameter_collimated=1e-3,
+            maker="Joe Britton",
+			model="Circa 2017"))
+    laser16.add_beam_stage(
+		BeamStage(
+			name="Laser head",
+			wavelength=780,
+			avg_power=200e-6,
+			diameter_collimated=1e-3,
+            maker="Wance Wang",
+			model="Circa 2017"))
+    lasers.append(laser16)
+
 
     laser4 = Laser("Sr+ S1/2 - P1/2", "Britton", "Zone L", "Description goes here")
     laser4.add_beam_stage(BeamStage("stage 1", 422, 0.08))
@@ -37,12 +229,6 @@ def create_lasers():
     laser3 = Laser("Paladin", "Britton", "Zone L", "Paladin 355 for Raman")
     laser3.add_beam_stage(BeamStage("stage 1", 355, 4))
     lasers.append(laser3)
-
-    laser1 = Laser("Ablation", "Britton", "Zone B", "This is the ablation laser")
-    laser1.add_beam_stage(BeamStage("stage 1", 1064, 30))
-    laser1.add_beam_stage(BeamStage("stage 2", 532, 30))
-    laser1.add_beam_stage(BeamStage("stage 3", 532, 1.5))
-    lasers.append(laser1)
 
     laser2 = Laser("Rb D1", "Britton", "Zone B", "Wavemeter reference")
     laser2.add_beam_stage(BeamStage("stage 1", 780, .1))
@@ -84,27 +270,18 @@ def create_lasers():
     laser15.add_beam_stage(BeamStage("stage 2", 1650, 0.54))
     lasers.append(laser15)
 
+    g = []
 
-# ====================== Classes ===========================
-class BeamStage:
-    def __init__(self, name:str, wavelength:float, avg_power:float):
-        # Need to add other parameters here
-        self.name = name
-        self.wavelength = wavelength
-        self.avg_power = avg_power
+    g.append(LaserGlasses('LG6', 'Thorlabs', 'LG6'))
+    g[-1].add_band(LaserGlassesRange(190e-9,  	315e-9,	True,	False, 	False, 	False, 	7))
+    g[-1].add_band(LaserGlassesRange(190e-9,  	315e-9,	False,	True, 	True, 	True, 	4))
+    g[-1].add_band(LaserGlassesRange(315e-9,  	398e-9,	True,	True, 	True, 	True, 	3))
+    g[-1].add_band(LaserGlassesRange(9000e-9,	11000e-9,	True,	True,	False,	False,	3))
 
-class Laser:
-        def __init__(self, name:str, lca:str, zone:str, description:str=None):
-            self.name = name
-            self.lca = lca
-            self.description = description
-            self.stages = []
-            self.gui_elements = []
-            self.zone = zone
-
-        def add_beam_stage(self, beam_stage:BeamStage):
-            self.stages.append(beam_stage)
-
+    g.append(LaserGlasses('LG7', 'Thorlabs', 'LG7'))
+    g[-1].add_band(LaserGlassesRange(180e-9,	315e-9,	True,	False,	False,	False,	6))
+    g[-1].add_band(LaserGlassesRange(180e-9,	315e-9,	False,	False,	True,	False,	4))
+    g[-1].add_band(LaserGlassesRange(615e-9,	660e-9,	True,	True,	True,	False,	3))
 
 
 create_lasers()

@@ -12,11 +12,13 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         super(ExampleApp, self).__init__(parent)
         self.setupUi(self)
 
-        icon = QtGui.QIcon("")
-        icon.addPixmap(QtGui.QPixmap("images/unchecked2.png"))
-        icon.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Disabled)
-        icon.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Active)
-        icon.addPixmap(QtGui.QPixmap("images/checked2.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon = QtGui.QIcon("images/boxgreen.png")
+
+        icon2 = QtGui.QIcon("")
+        icon2.addPixmap(QtGui.QPixmap("images/unchecked2.png"))
+        icon2.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Disabled)
+        icon2.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Active)
+        icon2.addPixmap(QtGui.QPixmap("images/checked2.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
 
         x = 0
         y = -1
@@ -33,7 +35,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             laser.button.setIconSize(QtCore.QSize(35, 35))
             laser.button.setCheckable(True)
             laser.button.setFlat(True)
-            laser.button.setIcon(icon)
+            laser.button.setIcon(icon2)
             laser.button.setStyleSheet("background-color: rgb(50, 56, 69)")
 
             self.laseronoff.addWidget(laser.button)
@@ -42,10 +44,11 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             x = 0
 
             for stage in laser.stages:
-                stage.button = QPushButton(laser.name + stage.name + "_stage")
+                #stage.button = QPushButton(laser.name + stage.name + "_stage")
+                stage.button = Button(laser.name + stage.name + "_stage")
                 stage.button.setText("")
                 stage.button.flat = True
-                stage.button.setCheckable(True)
+                stage.button.setCheckable(False)
                 stage.button.setFlat(True)
                 stage.button.setIcon(icon)
                 stage.button.setStyleSheet("background-color: rgb(50, 56, 69)")
@@ -54,6 +57,8 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
                 stage.button.setGeometry(200, 200, 200, 200)
                 stage.button.clicked.connect(self.btnclicked)
                 stage.button.setIconSize(QtCore.QSize(35, 35))
+
+                stage.button.hoverConnect(self.btnHovered)
 
                 self.lasergrid.addWidget(stage.button, y, x)
                 x += 1
@@ -66,16 +71,11 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
 
     def btnclicked(self):
-
-        print("Button clicked")
-
         try:
             button = self.sender()
             print("Clicked: " + str(button))
-            if button.isChecked():
-                print("Set button on")
-            else:
-                print("Set button off")
+            button.nextState()
+
         except Exception as e:
             print(e)
 
@@ -105,7 +105,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         for laser in lasers:
             if laser.button.isChecked():
                 for stage in laser.stages:
-                    if not stage.button.isChecked():
+                    if not stage.button.getState() == 0:
                         if laser.zone == "Zone L":
                             wavelengthsL.append(stage.wavelength)
                         if laser.zone == "Zone B":
@@ -165,6 +165,53 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             self.glasses5transparent2.isVisible()):
             #print("Warning")
             self.warning.show()
+
+    def btnHovered(self):
+        try:
+            self.zoneinfo.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + "</span></p></body></html>")
+            for laser in lasers:
+                for stage in laser.stages:
+                    if stage.button.isHovered():
+                        print("Hovered: " + stage.name)
+                        self.zoneinfo.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + "Name: " + str(stage.name) + ", Maker: " + str(stage.maker) + ", Model: " + str(stage.model) + "</span></p></body></html>")
+        except:
+            print("Hover failed")
+
+class Button(QPushButton):
+
+    def __init__(self, parent=None):
+        super(Button, self).__init__(parent)
+        self.setIcon(QtGui.QIcon("images/unchecked2.png"))
+        self.state = 0
+        self.hover = False
+
+    def hoverConnect(self, hoverFunc):
+        self.hoverFunc = hoverFunc
+
+    def enterEvent(self, QEvent):
+        self.hover = True
+        self.hoverFunc()
+
+    def leaveEvent(self, QEvent):
+        self.hover = False
+        self.hoverFunc()
+
+    def isHovered(self):
+        return self.hover
+
+    def getState(self):
+        return self.state
+
+    def nextState(self):
+        if self.state == 0:
+            self.setIcon(QtGui.QIcon("images/boxyellow.png"))
+            self.state += 1
+        elif self.state == 1:
+            self.setIcon(QtGui.QIcon("images/boxred.png"))
+            self.state = 2
+        elif self.state == 2:
+            self.setIcon(QtGui.QIcon("images/boxgreen.png"))
+            self.state = 0
 
 
 def main():

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1474</width>
+    <width>1367</width>
     <height>950</height>
    </rect>
   </property>
@@ -55,7 +55,7 @@
     <property name="geometry">
      <rect>
       <x>-30</x>
-      <y>-10</y>
+      <y>-70</y>
       <width>1511</width>
       <height>1041</height>
      </rect>
@@ -137,10 +137,10 @@
    <widget class="QLabel" name="element3_2">
     <property name="geometry">
      <rect>
-      <x>1140</x>
+      <x>1120</x>
       <y>20</y>
-      <width>321</width>
-      <height>901</height>
+      <width>231</width>
+      <height>811</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -431,7 +431,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>1160</x>
+      <x>1130</x>
       <y>30</y>
       <width>221</width>
       <height>51</height>
@@ -446,7 +446,7 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#b0b7c1;&quot;&gt;Stage Enclosed&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#b0b7c1;&quot;&gt;Zone State&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="glasses3transparent">
@@ -1280,10 +1280,10 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>1150</x>
+      <x>1130</x>
       <y>90</y>
-      <width>291</width>
-      <height>821</height>
+      <width>211</width>
+      <height>731</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="lasergrid">
@@ -1298,7 +1298,7 @@
       <x>870</x>
       <y>20</y>
       <width>141</width>
-      <height>901</height>
+      <height>811</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1329,7 +1329,7 @@
       <x>880</x>
       <y>90</y>
       <width>121</width>
-      <height>821</height>
+      <height>731</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="lasernames">
@@ -1364,8 +1364,8 @@
      <rect>
       <x>1020</x>
       <y>20</y>
-      <width>111</width>
-      <height>901</height>
+      <width>91</width>
+      <height>811</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1416,8 +1416,8 @@
      <rect>
       <x>1030</x>
       <y>90</y>
-      <width>91</width>
-      <height>821</height>
+      <width>71</width>
+      <height>731</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="laseronoff">
@@ -1506,6 +1506,86 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
    </widget>
+   <widget class="QLabel" name="element2_6">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>840</y>
+      <width>481</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/gui1element1.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="zoneinfo">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>890</y>
+      <width>451</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>840</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#b0b7c1;&quot;&gt;Zone Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
    <zorder>background</zorder>
    <zorder>element3_2</zorder>
    <zorder>element3_5</zorder>
@@ -1551,6 +1631,9 @@
    <zorder>element2_5</zorder>
    <zorder>label_16</zorder>
    <zorder>freqlistb</zorder>
+   <zorder>element2_6</zorder>
+   <zorder>zoneinfo</zorder>
+   <zorder>label_17</zorder>
   </widget>
  </widget>
  <resources/>
