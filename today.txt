@@ -1,4 +1,0 @@
-Move zone check to beam stage
-Scale interface
-Go to lab and transfer data
-Rename graphics to match

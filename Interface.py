@@ -824,7 +824,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#b0b7c1;\">LCA 1:</span></p></body></html>"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#b0b7c1;\">Wavelengths L</span></p></body></html>"))
+        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#b0b7c1;\">Wavelengths 1</span></p></body></html>"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">Zone State</span></p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">MAP</span></p></body></html>"))
         self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#b0b7c1;\">LCA 2:</span></p></body></html>"))
@@ -837,7 +837,7 @@ class Ui_MainWindow(object):
         self.label_13.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">Glassses:</span></p></body></html>"))
         self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">Laser</span></p></body></html>"))
         self.label_15.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">On/Off</span></p></body></html>"))
-        self.label_16.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">Wavelengths B</span></p></body></html>"))
+        self.label_16.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">Wavelengths 2</span></p></body></html>"))
         self.freqlistb.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#b0b7c1;\">Zone 1</span></p></body></html>"))
         self.zoneinfo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#b0b7c1;\"></span></p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#b0b7c1;\">Zone Info</span></p></body></html>"))
