@@ -9,18 +9,18 @@
 class LaserContainmentArea:
 	"""Class to hold information about Laser Containment Areas (LCA) in the lab.
 	A single LaserBeamPath can span multiple LCAs.
-	Personal Protective Equipment (PPE) will be computed for each LCA. 
+	Personal Protective Equipment (PPE) will be computed for each LCA.
 
 	:param name: LCA name
-	:param namev: verbose LCA name 
+	:param namev: verbose LCA name
 	"""
 	def __init__(self, name:str, namev:str=None):
 		self.name = name
 		self.namev = namev
 
 class LaserGlassesRange:
-	"""Class to hold optical attenuation data for laser glasses in a particular wavelength range. 
-	
+	"""Class to hold optical attenuation data for laser glasses in a particular wavelength range.
+
 	:param low: lower wavelength in meters
 	:param high: upper wavelength in meters
 	:param lbd: is continuous wave (t > 0.25 s)
@@ -32,7 +32,7 @@ class LaserGlassesRange:
 	cf: https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=762
 	"""
 	def __init__(self, low:int, high:int , lbd:bool, lbi:bool, lbr:bool , lbm:bool, lbod:bool):
-		self.low = low 
+		self.low = low
 		self.high = high
 		self.lbd = lbd
 		self.lbi = lbi
@@ -44,13 +44,13 @@ class LaserGlasses:
 	"""Class to hold data about laser glasses.
 
 	:param name: name
-	:param mfg: manufacturer 
+	:param mfg: manufacturer
 	:param pn: part number
 
 	"""
 	def __init__(self, name:str, mfg:str, pn:str):
 		self.name = name
-		self.mfg = mfg 
+		self.mfg = mfg
 		self.pn = pn
 		self.bands = []
 
@@ -63,7 +63,7 @@ class LaserBeamPathElement:
 	"""Class to hold data about a segment of a laser beam path.
 
 	:param name: path element name (eg f0, f2 for fundamental, second harmonic)
-	:param lca: laser containment area 
+	:param lca: laser containment area
 	:param wavelength: center wavelength in meters
 	:param avg_power: time-average power in watts
 	:param diameter_collimated: laser beam diameter when collimated in meters
@@ -73,9 +73,9 @@ class LaserBeamPathElement:
 	:param maker: manufacturer or maker of the laser path element
 	:param model: model number
 	"""
-	def __init__(self, name:str, lca:LaserContainmentArea, wavelength:float, avg_power:float, diameter_collimated:float=None, 
-		pulse_t_min:float=None, pulse_t_max:float=None, 
-		pulse_f_min:float=None, pulse_f_max:float=None, 
+	def __init__(self, name:str, lca:LaserContainmentArea, wavelength:float, avg_power:float, diameter_collimated:float=None,
+		pulse_t_min:float=None, pulse_t_max:float=None,
+		pulse_f_min:float=None, pulse_f_max:float=None,
 		maker:str=None, model:str=None):
 
 		self.name = name
@@ -87,7 +87,7 @@ class LaserBeamPathElement:
 		self.pulse_t_max = pulse_t_max
 		self.pulse_f_min = pulse_f_min
 		self.pulse_f_max = pulse_f_max
-		self.maker = maker 
+		self.maker = maker
 		self.model = model
 
 class LaserBeamPath:
@@ -104,7 +104,7 @@ class LaserBeamPath:
 		self.path.append(path_element)
 
 
-# following should go in a separate configuration file 
+# following should go in a separate configuration file
 # eg lagona_atlantic_b0225_config.py
 
 g = []
@@ -129,7 +129,7 @@ paths.append(LaserBeamPath('ablation', namev="cryo system ablation laser"))
 paths[-1].add_path_element(
 	LaserBeamPathElement(
 		name = 'laser head',
-		lca = lcab, 
+		lca = lcab,
 		wavelength = 1064e-9,
 		avg_power = 30,
 		diameter_collimated = 2e-3,
@@ -140,7 +140,7 @@ paths[-1].add_path_element(
 paths[-1].add_path_element(
 	LaserBeamPathElement(
 		name = 'doubler_box',
-		lca = lcab, 
+		lca = lcab,
 		wavelength = 1064e-9,
 		avg_power = 30,
 		diameter_collimated = 2e-3,
@@ -151,7 +151,7 @@ paths[-1].add_path_element(
 paths[-1].add_path_element(
 	LaserBeamPathElement(
 		name = 'doubler_box',
-		lca = lcab, 		
+		lca = lcab,
 		wavelength = 532e-9,
 		avg_power = 6,
 		diameter_collimated = 2e-3,
@@ -162,7 +162,7 @@ paths[-1].add_path_element(
 paths[-1].add_path_element(
 	LaserBeamPathElement(
 		name = 'Hucul West',
-		lca = lcab, 
+		lca = lcab,
 		wavelength = 532e-9,
 		avg_power = 5,
 		diameter_collimated = 1e-3,
@@ -183,8 +183,8 @@ paths[-1].add_path_element(
 	)
 paths[-1].add_path_element(
 	LaserBeamPathElement(
-		name = 'Rb saturated absorption setup',
-		lca = lcab, 
+		name = 'rb saturated absorption setup',
+		lca = lcab,
 		wavelength = 780e-9,
 		avg_power = 100e-3,
 		diameter_collimated = 1e-3,
@@ -193,7 +193,7 @@ paths[-1].add_path_element(
 paths[-1].add_path_element(
 	LaserBeamPathElement(
 		name = 'wavemeter',
-		lca = lcab, 
+		lca = lcab,
 		wavelength = 780e-9,
 		avg_power = 1e-3,
 		diameter_collimated = 1e-3,
@@ -202,7 +202,7 @@ paths[-1].add_path_element(
 paths[-1].add_path_element(
 	LaserBeamPathElement(
 		name = 'SLS quad cavity',
-		lca = lcal, 
+		lca = lcal,
 		wavelength = 780e-9,
 		avg_power = 200e-6,
 		diameter_collimated = 1e-3,

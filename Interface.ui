@@ -193,7 +193,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesempty.png</pixmap>
+        <pixmap>images/eye.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -690,7 +690,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesempty.png</pixmap>
+        <pixmap>images/eye.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
