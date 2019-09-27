@@ -180,7 +180,7 @@ def create_lasers():
 			model="Circa 2017"))
     laser16.add_path_element(
 		PathElement(
-			name="Laser head",
+			name="RB saturated absorption setup",
 			wavelength=780,
 			lca="Zone B",
 			avg_power=100e-3,
@@ -189,7 +189,7 @@ def create_lasers():
 			model="Circa 2017"))
     laser16.add_path_element(
 		PathElement(
-			name="Laser head",
+			name="Wavemeter",
 			wavelength=780,
 			lca="Zone B",
 			avg_power=150e-3,
@@ -198,9 +198,9 @@ def create_lasers():
 			model="Circa 2017"))
     laser16.add_path_element(
 		PathElement(
-			name="Laser head",
+			name="SLS Quad Cavity",
 			wavelength=780,
-			lca="Zone B",
+			lca="Zone L",
 			avg_power=200e-6,
 			diameter_collimated=1e-3,
             maker="Wance Wang",

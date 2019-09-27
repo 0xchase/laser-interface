@@ -127,7 +127,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
         if len(wavelengthsL) > 0:
             self.glasses1transparent.show()
-            self.zonebred.show()
+            self.zonelred.show()
 
         for w in wavelengthsL:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
