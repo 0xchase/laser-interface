@@ -525,7 +525,7 @@ class Ui_MainWindow(object):
         self.zonebred.setScaledContents(True)
         self.zonebred.setObjectName("zonebred")
         self.zonelred = QtWidgets.QLabel(self.centralwidget)
-        self.zonelred.setGeometry(QtCore.QRect(20, 400, 751, 341))
+        self.zonelred.setGeometry(QtCore.QRect(25, 400, 711, 341))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
