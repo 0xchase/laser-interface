@@ -245,11 +245,6 @@ def create_lasers():
     laser10.add_beam_stage(BeamStage("stage 2", 399, 0.528))
     lasers.append(laser10)
 
-    laser11 = Laser("Missing Name", "Britton", "Zone B", "Description goes here")
-    laser11.add_beam_stage(BeamStage("stage 1", 493, 0.035))
-    laser11.add_beam_stage(BeamStage("stage 2", 493, 0.535))
-    lasers.append(laser11)
-
     laser12 = Laser("Yb+ F7/2 - [5/2] 5/2", "Britton", "Zone B", "Description goes here")
     laser12.add_beam_stage(BeamStage("stage 1", 635, 0.055))
     laser12.add_beam_stage(BeamStage("stage 2", 635, 0.555))
