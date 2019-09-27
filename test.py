@@ -109,9 +109,9 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             if laser.button.isChecked():
                 for stage in laser.stages:
                     if not stage.button.getState() == 0:
-                        if laser.zone == "Zone L":
+                        if stage.lca == "Zone L":
                             wavelengthsL.append(stage.wavelength)
-                        if laser.zone == "Zone B":
+                        if stage.lca == "Zone B":
                             wavelengthsB.append(stage.wavelength)
 
         sl = ""

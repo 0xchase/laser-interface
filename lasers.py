@@ -81,10 +81,11 @@ class BeamStage:
     :param model: model number
     """
 
-    def __init__(self, name:str, wavelength:float, avg_power:float, diameter_collimated:float=None,
+    def __init__(self, name:str, lca:str, wavelength:float, avg_power:float, diameter_collimated:float=None,
                 pulse_t_min:float=None, pulse_t_max:float=None, pulse_f_min:float=None, pulse_f_max:float=None,
                 maker:str=None, model:str=None):
         self.name = name
+        self.lca = lca
         self.wavelength = wavelength
         self.avg_power = avg_power
 
@@ -116,6 +117,7 @@ def create_lasers():
 		BeamStage(
 			name="Laser head",
 			wavelength=1064,
+			lca="Zone B",
 			avg_power=30,
 			diameter_collimated=2e-3,
             pulse_t_min=1e-9,
@@ -128,6 +130,7 @@ def create_lasers():
 		BeamStage(
 			name="Doubler box 1",
 			wavelength=1064,
+			lca="Zone B",
 			avg_power=30,
 			diameter_collimated=2e-3,
             pulse_t_min=1e-9,
@@ -140,6 +143,7 @@ def create_lasers():
 		BeamStage(
 			name="Doubler box 2",
 			wavelength=1064,
+			lca="Zone B",
 			avg_power=30,
 			diameter_collimated=2e-3,
 	        pulse_t_min=1e-9,
@@ -152,6 +156,7 @@ def create_lasers():
 		BeamStage(
 			name="Hucul West",
 			wavelength=1064,
+			lca="Zone B",
 			avg_power=30,
 			diameter_collimated=2e-3,
 	        pulse_t_min=1e-9,
@@ -168,6 +173,7 @@ def create_lasers():
 		BeamStage(
 			name="Laser head",
 			wavelength=780,
+			lca="Zone B",
 			avg_power=150e-3,
 			diameter_collimated=1e-3,
             maker="Toptica",
@@ -176,6 +182,7 @@ def create_lasers():
 		BeamStage(
 			name="Laser head",
 			wavelength=780,
+			lca="Zone B",
 			avg_power=100e-3,
 			diameter_collimated=1e-3,
             maker="Joe Britton",
@@ -184,6 +191,7 @@ def create_lasers():
 		BeamStage(
 			name="Laser head",
 			wavelength=780,
+			lca="Zone B",
 			avg_power=150e-3,
 			diameter_collimated=1e-3,
             maker="Joe Britton",
@@ -192,6 +200,7 @@ def create_lasers():
 		BeamStage(
 			name="Laser head",
 			wavelength=780,
+			lca="Zone B",
 			avg_power=200e-6,
 			diameter_collimated=1e-3,
             maker="Wance Wang",
@@ -200,69 +209,69 @@ def create_lasers():
 
 
     laser4 = Laser("Sr+ S1/2 - P1/2", "Britton", "Zone L", "Description goes here")
-    laser4.add_beam_stage(BeamStage("stage 1", 422, 0.08))
-    laser4.add_beam_stage(BeamStage("stage 2", 422, 0.064))
+    laser4.add_beam_stage(BeamStage("stage 1", 422, "Zone L", 0.08))
+    laser4.add_beam_stage(BeamStage("stage 2", 422, "Zone L", 0.064))
     lasers.append(laser4)
 
     laser5 = Laser("Sr PI D1", "Britton", "Zone L", "Description goes here")
-    laser5.add_beam_stage(BeamStage("stage 1", 461, 0.112))
-    laser5.add_beam_stage(BeamStage("stage 2", 461, 0.0896))
+    laser5.add_beam_stage(BeamStage("stage 1", 461, "Zone L", 0.112))
+    laser5.add_beam_stage(BeamStage("stage 2", 461, "Zone L", 0.0896))
     lasers.append(laser5)
 
     laser6 = Laser("Sr+ D5/2 - P3/2", "Britton", "Zone L", "Description goes here")
-    laser6.add_beam_stage(BeamStage("stage 1", 1033, 0.24))
-    laser6.add_beam_stage(BeamStage("stage 1", 1033, 0.192))
+    laser6.add_beam_stage(BeamStage("stage 1", 1033, "Zone L", 0.24))
+    laser6.add_beam_stage(BeamStage("stage 1", 1033, "Zone L", 0.192))
     lasers.append(laser6)
 
     laser7 = Laser("Sr+ D3/2 - P1/2", "Britton", "Zone L", "Description goes here")
-    laser7.add_beam_stage(BeamStage("stage 1", 1092, 0.137))
-    laser7.add_beam_stage(BeamStage("stage 1", 1033, 0.1096))
+    laser7.add_beam_stage(BeamStage("stage 1", 1092, "Zone L", 0.137))
+    laser7.add_beam_stage(BeamStage("stage 1", 1033, "Zone L", 0.1096))
     lasers.append(laser7)
 
     laser8 = Laser("Sr PI 2nd", "Britton", "Zone L", "I-Beam Smart")
-    laser8.add_beam_stage(BeamStage("stage 1", 407, 0.1))
-    laser8.add_beam_stage(BeamStage("stage 1", 407, 0.1))
+    laser8.add_beam_stage(BeamStage("stage 1", 407, "Zone L", 0.1))
+    laser8.add_beam_stage(BeamStage("stage 1", 407, "Zone L", 0.1))
     lasers.append(laser8)
 
 
 
     laser3 = Laser("Paladin", "Britton", "Zone L", "Paladin 355 for Raman")
-    laser3.add_beam_stage(BeamStage("stage 1", 355, 4))
+    laser3.add_beam_stage(BeamStage("stage 1", "Zone L", 355, 4))
     lasers.append(laser3)
 
     laser2 = Laser("Rb D1", "Britton", "Zone B", "Wavemeter reference")
-    laser2.add_beam_stage(BeamStage("stage 1", 780, .1))
-    laser2.add_beam_stage(BeamStage("stage 2", 780, 0.08))
+    laser2.add_beam_stage(BeamStage("stage 1", 780, "Zone B", .1))
+    laser2.add_beam_stage(BeamStage("stage 2", 780, "Zone B", 0.08))
     lasers.append(laser2)
 
     laser9 = Laser("Yb+ D1", "Britton", "Zone B", "Description goes here")
-    laser9.add_beam_stage(BeamStage("stage 1", 369, 0.0225))
-    laser9.add_beam_stage(BeamStage("stage 2", 369, 0.523))
+    laser9.add_beam_stage(BeamStage("stage 1", 369, "Zone B", 0.0225))
+    laser9.add_beam_stage(BeamStage("stage 2", 369, "Zone B", 0.523))
     lasers.append(laser9)
 
     laser10 = Laser("Yb PI D1", "Britton", "Zone B", "Description goes here")
-    laser10.add_beam_stage(BeamStage("stage 1", 399, 0.028))
-    laser10.add_beam_stage(BeamStage("stage 2", 399, 0.528))
+    laser10.add_beam_stage(BeamStage("stage 1", 399, "Zone B", 0.028))
+    laser10.add_beam_stage(BeamStage("stage 2", 399, "Zone B", 0.528))
     lasers.append(laser10)
 
     laser12 = Laser("Yb+ F7/2 - [5/2] 5/2", "Britton", "Zone B", "Description goes here")
-    laser12.add_beam_stage(BeamStage("stage 1", 635, 0.055))
-    laser12.add_beam_stage(BeamStage("stage 2", 635, 0.555))
+    laser12.add_beam_stage(BeamStage("stage 1", 635, "Zone B", 0.055))
+    laser12.add_beam_stage(BeamStage("stage 2", 635, "Zone B", 0.555))
     lasers.append(laser12)
 
     laser13 = Laser("Ba+ D3/2 - P1/2", "Britton", "Zone B", "Description goes here")
-    laser13.add_beam_stage(BeamStage("stage 1", 650, 0.04))
-    laser13.add_beam_stage(BeamStage("stage 2", 650, 0.54))
+    laser13.add_beam_stage(BeamStage("stage 1", 650, "Zone B", 0.04))
+    laser13.add_beam_stage(BeamStage("stage 2", 650, "Zone B", 0.54))
     lasers.append(laser13)
 
     laser14 = Laser("Yb+ D3/2 - [3/2] 1/2", "Britton", "Zone B", "Description goes here")
-    laser14.add_beam_stage(BeamStage("stage 1", 935, 0.095))
-    laser14.add_beam_stage(BeamStage("stage 2", 935, 0.595))
+    laser14.add_beam_stage(BeamStage("stage 1", 935, "Zone B", 0.095))
+    laser14.add_beam_stage(BeamStage("stage 2", 935, "Zone B", 0.595))
     lasers.append(laser14)
 
     laser15 = Laser("Yb+ D3/2 - P3/2", "Britton", "Zone B", "Description goes here")
-    laser15.add_beam_stage(BeamStage("stage 1", 1650, 0.04))
-    laser15.add_beam_stage(BeamStage("stage 2", 1650, 0.54))
+    laser15.add_beam_stage(BeamStage("stage 1", 1650, "Zone B", 0.04))
+    laser15.add_beam_stage(BeamStage("stage 2", 1650, "Zone B", 0.54))
     lasers.append(laser15)
 
     g = []
