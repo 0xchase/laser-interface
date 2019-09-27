@@ -12,6 +12,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         super(ExampleApp, self).__init__(parent)
         self.setupUi(self)
 
+
         icon = QtGui.QIcon("images/boxgreen.png")
 
         icon2 = QtGui.QIcon("")
@@ -66,6 +67,8 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.warning.hide()
 
         self.freqs = []
+
+        self.showFullScreen()
 
         self.btnclicked()
 
