@@ -492,7 +492,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/gui1element2.png</pixmap>
+     <pixmap>images/gui1element6.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1442,7 +1442,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/gui1element2.png</pixmap>
+     <pixmap>images/gui1element6.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1495,7 +1495,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/gui1element2.png</pixmap>
+     <pixmap>images/gui1element6.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
