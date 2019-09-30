@@ -4,13 +4,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 import sys
 import Interface
+import Simple
 import lasers
 from lasers import *
 
 class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
-    def __init__(self, parent=None):
+    def __init__(self, simpleForm, parent=None):
         super(ExampleApp, self).__init__(parent)
         self.setupUi(self)
+        self.simpleForm = simpleForm
 
 
         icon = QtGui.QIcon("images/boxgreen.png")
@@ -27,7 +29,11 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             laser.label = QLabel(laser.name)
             laser.label.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.name + "</span></p></body></html>")
 
+            laser.desc = QLabel(laser.description)
+            laser.desc.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.description + "</span></p></body></html>")
+
             self.lasernames.addWidget(laser.label)
+            self.descriptions.addWidget(laser.desc)
 
             laser.button = QPushButton(laser.name + "_onoff")
             laser.button.setText("")
@@ -64,11 +70,11 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
                 self.lasergrid.addWidget(stage.button, y, x)
                 x += 1
 
-        self.warning.hide()
+        self.simpleForm.warning.hide()
 
         self.freqs = []
 
-        self.showFullScreen()
+        #self.showFullScreen()
 
         self.btnclicked()
 
@@ -76,7 +82,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
     def btnclicked(self):
         try:
             button = self.sender()
-            print("Clicked: " + str(button))
+            #print("Clicked: " + str(button))
             button.nextState()
 
         except Exception as e:
@@ -86,21 +92,21 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.freqszone1 = []
         self.freqszone2 = []
 
-        self.glasses1transparent.hide()
-        self.glasses2transparent.hide()
-        self.glasses3transparent.hide()
-        self.glasses4transparent.hide()
-        self.glasses5transparent.hide()
+        self.simpleForm.glasses1transparent.hide()
+        self.simpleForm.glasses2transparent.hide()
+        self.simpleForm.glasses3transparent.hide()
+        self.simpleForm.glasses4transparent.hide()
+        self.simpleForm.glasses5transparent.hide()
 
 
-        self.glasses1transparent2.hide()
-        self.glasses2transparent2.hide()
-        self.glasses3transparent2.hide()
-        self.glasses4transparent2.hide()
-        self.glasses5transparent2.hide()
+        self.simpleForm.glasses1transparent2.hide()
+        self.simpleForm.glasses2transparent2.hide()
+        self.simpleForm.glasses3transparent2.hide()
+        self.simpleForm.glasses4transparent2.hide()
+        self.simpleForm.glasses5transparent2.hide()
 
-        self.zonelred.hide()
-        self.zonebred.hide()
+        self.simpleForm.zonelred.hide()
+        self.simpleForm.zonebred.hide()
 
         wavelengthsL = []
         wavelengthsB = []
@@ -120,54 +126,52 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             sb += str(w) + " nm<br>"
         for w in wavelengthsL:
             sl += str(w) + " nm<br>"
-        self.freqlistl.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sl) + "</span></p></body></html>")
-        self.freqlistb.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sb) + "</span></p></body></html>")
+        self.simpleForm.freqlistl.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sl) + "</span></p></body></html>")
+        self.simpleForm.freqlistb.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sb) + "</span></p></body></html>")
 
         self.warning.hide()
 
         if len(wavelengthsL) > 0:
-            self.glasses1transparent.show()
-            self.zonelred.show()
+            self.simpleForm.glasses1transparent.show()
+            self.simpleForm.zonelred.show()
 
         for w in wavelengthsL:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
-                self.glasses2transparent.show()
+                self.simpleForm.glasses2transparent.show()
             if not (190 <= w <= 400 or 808 <= w <= 840 or 840 <= w <= 950 or 950 <= w <= 1080 or 1080 <= w <= 1090):
-                self.glasses3transparent.show()
+                self.simpleForm.glasses3transparent.show()
             if not (190 <= w <= 400 or 651 <= w <= 670 or 671 <= w <= 715 or 680 <= w <= 710 or 690 <= w <= 700):
-                self.glasses4transparent.show()
+                self.simpleForm.glasses4transparent.show()
             if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
-                self.glasses5transparent.show()
+                self.simpleForm.glasses5transparent.show()
 
         if len(wavelengthsB) > 0:
-            self.glasses1transparent2.show()
-            self.zonebred.show()
+            self.simpleForm.glasses1transparent2.show()
+            self.simpleForm.zonebred.show()
 
         for w in wavelengthsB:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
-                self.glasses2transparent2.show()
+                self.simpleForm.glasses2transparent2.show()
             if not (190 <= w <= 400 or 808 <= w <= 840 or 840 <= w <= 950 or 950 <= w <= 1080 or 1080 <= w <= 1090):
-                self.glasses3transparent2.show()
+                self.simpleForm.glasses3transparent2.show()
             if not (190 <= w <= 400 or 651 <= w <= 670 or 671 <= w <= 715 or 680 <= w <= 710 or 690 <= w <= 700):
-                self.glasses4transparent2.show()
+                self.simpleForm.glasses4transparent2.show()
             if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
-                self.glasses5transparent2.show()
+                self.simpleForm.glasses5transparent2.show()
 
-        if (self.glasses1transparent.isVisible() and
-            self.glasses2transparent.isVisible() and
-            self.glasses3transparent.isVisible() and
-            self.glasses4transparent.isVisible() and
-            self.glasses5transparent.isVisible()):
-            #print("Warning")
-            self.warning.show()
+        if (self.simpleForm.glasses1transparent.isVisible() and
+            self.simpleForm.glasses2transparent.isVisible() and
+            self.simpleForm.glasses3transparent.isVisible() and
+            self.simpleForm.glasses4transparent.isVisible() and
+            self.simpleForm.glasses5transparent.isVisible()):
+            self.simpleForm.warning.show()
 
-        if (self.glasses1transparent2.isVisible() and
-            self.glasses2transparent2.isVisible() and
-            self.glasses3transparent2.isVisible() and
-            self.glasses4transparent2.isVisible() and
-            self.glasses5transparent2.isVisible()):
-            #print("Warning")
-            self.warning.show()
+        if (self.simpleForm.glasses1transparent2.isVisible() and
+            self.simpleForm.glasses2transparent2.isVisible() and
+            self.simpleForm.glasses3transparent2.isVisible() and
+            self.simpleForm.glasses4transparent2.isVisible() and
+            self.simpleForm.glasses5transparent2.isVisible()):
+            self.simpleForm.warning.show()
 
     def btnHovered(self):
         try:
@@ -175,7 +179,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             for laser in lasers:
                 for stage in laser.stages:
                     if stage.button.isHovered():
-                        print("Hovered: " + stage.name)
+                        #print("Hovered: " + stage.name)
                         self.zoneinfo.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + "Name: " + str(stage.name) + ", Maker: " + str(stage.maker) + ", Model: " + str(stage.model) + "</span></p></body></html>")
         except:
             print("Hover failed")
@@ -216,12 +220,19 @@ class Button(QPushButton):
             self.setIcon(QtGui.QIcon("images/boxgreen.png"))
             self.state = 0
 
+class ExampleApp2(QtWidgets.QMainWindow, Simple.Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(ExampleApp2, self).__init__(parent)
+        self.setupUi(self)
+
 
 def main():
     app = QApplication(sys.argv)
-    form = ExampleApp()
+    form2 = ExampleApp2()
+    form1 = ExampleApp(form2)
 
-    form.show()
+    form1.show()
+    form2.show()
     app.exec_()
 
 if __name__ == '__main__':
