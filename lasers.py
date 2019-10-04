@@ -120,12 +120,12 @@ class Laser:
 def create_lasers():
     global lasers
 
-    laser1 = Laser("Ablation", "Britton", "Zone B", "This is the ablation laser")
+    laser1 = Laser("Ablation", "Britton", "LCA 2", "This is the ablation laser")
     laser1.add_path_element(
         PathElement(
             name="Laser head",
             wavelength=1064,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=30,
             diameter_collimated=2e-3,
             pulse_t_min=1e-9,
@@ -138,7 +138,7 @@ def create_lasers():
         PathElement(
             name="Doubler box 1",
             wavelength=1064,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=30,
             diameter_collimated=2e-3,
             pulse_t_min=1e-9,
@@ -151,7 +151,7 @@ def create_lasers():
         PathElement(
             name="Doubler box 2",
             wavelength=1064,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=30,
             diameter_collimated=2e-3,
             pulse_t_min=1e-9,
@@ -164,7 +164,7 @@ def create_lasers():
         PathElement(
             name="Hucul West",
             wavelength=1064,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=30,
             diameter_collimated=2e-3,
             pulse_t_min=1e-9,
@@ -175,12 +175,12 @@ def create_lasers():
             model="Circa 2019"))
     lasers.append(laser1)
 
-    laser16 = Laser("Rb wavemeter ref", "Britton", "Zone B", "What is exact Rb line???")
+    laser16 = Laser("Rb wavemeter ref", "Britton", "LCA 2", "What is exact Rb line???")
     laser16.add_path_element(
         PathElement(
             name="Laser head",
             wavelength=780,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=150e-3,
             diameter_collimated=1e-3,
             maker="Toptica",
@@ -189,7 +189,7 @@ def create_lasers():
         PathElement(
             name="RB saturated absorption setup",
             wavelength=780,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=100e-3,
             diameter_collimated=1e-3,
             maker="Joe Britton",
@@ -198,7 +198,7 @@ def create_lasers():
         PathElement(
             name="Wavemeter",
             wavelength=780,
-            lca="Zone B",
+            lca="LCA 2",
             avg_power=150e-3,
             diameter_collimated=1e-3,
             maker="Joe Britton",
@@ -207,75 +207,75 @@ def create_lasers():
         PathElement(
             name="SLS Quad Cavity",
             wavelength=780,
-            lca="Zone L",
+            lca="LCA 1",
             avg_power=200e-6,
             diameter_collimated=1e-3,
             maker="Wance Wang",
             model="Circa 2017"))
     lasers.append(laser16)
 
-    laser4 = Laser("Sr+ S1/2 - P1/2", "Britton", "Zone L", "Description goes here")
-    laser4.add_path_element(PathElement(name="stage 1", wavelength=422, lca="Zone L", avg_power=0.08))
-    laser4.add_path_element(PathElement(name="stage 1", wavelength=422, lca="Zone L", avg_power=0.064))
+    laser4 = Laser("Sr+ S1/2 - P1/2", "Britton", "LCA 1", "Description goes here")
+    laser4.add_path_element(PathElement(name="stage 1", wavelength=422, lca="LCA 1", avg_power=0.08))
+    laser4.add_path_element(PathElement(name="stage 1", wavelength=422, lca="LCA 1", avg_power=0.064))
     lasers.append(laser4)
 
-    laser5 = Laser("Sr PI D1", "Britton", "Zone L", "Description goes here")
-    laser5.add_path_element(PathElement(name="stage 1", wavelength=461, lca="Zone L", avg_power=0.0112))
-    laser5.add_path_element(PathElement(name="stage 2", wavelength=461, lca="Zone L", avg_power=0.0896))
+    laser5 = Laser("Sr PI D1", "Britton", "LCA 1", "Description goes here")
+    laser5.add_path_element(PathElement(name="stage 1", wavelength=461, lca="LCA 1", avg_power=0.0112))
+    laser5.add_path_element(PathElement(name="stage 2", wavelength=461, lca="LCA 1", avg_power=0.0896))
     lasers.append(laser5)
 
-    laser6 = Laser("Sr+ D5/2 - P3/2", "Britton", "Zone L", "Description goes here")
-    laser6.add_path_element(PathElement(name="stage 1", wavelength=1033, lca="Zone L", avg_power=0.137))
-    laser6.add_path_element(PathElement(name="stage 2", wavelength=1033, lca="Zone L", avg_power=0.1096))
+    laser6 = Laser("Sr+ D5/2 - P3/2", "Britton", "LCA 1", "Description goes here")
+    laser6.add_path_element(PathElement(name="stage 1", wavelength=1033, lca="LCA 1", avg_power=0.137))
+    laser6.add_path_element(PathElement(name="stage 2", wavelength=1033, lca="LCA 1", avg_power=0.1096))
     lasers.append(laser6)
 
-    laser7 = Laser("Sr+ D3/2 - P1/2", "Britton", "Zone L", "Description goes here")
-    laser7.add_path_element(PathElement(name="stage 1", wavelength=1092, lca="Zone L", avg_power=0.137))
-    laser7.add_path_element(PathElement(name="stage 2", wavelength=1092, lca="Zone L", avg_power=0.1096))
+    laser7 = Laser("Sr+ D3/2 - P1/2", "Britton", "LCA 1", "Description goes here")
+    laser7.add_path_element(PathElement(name="stage 1", wavelength=1092, lca="LCA 1", avg_power=0.137))
+    laser7.add_path_element(PathElement(name="stage 2", wavelength=1092, lca="LCA 1", avg_power=0.1096))
     lasers.append(laser7)
 
-    laser8 = Laser("Sr PI 2nd", "Britton", "Zone L", "I-Beam Smart")
-    laser8.add_path_element(PathElement(name="stage 1", wavelength=407, lca="Zone L", avg_power=0.1))
-    laser8.add_path_element(PathElement(name="stage 2", wavelength=407, lca="Zone L", avg_power=0.1))
+    laser8 = Laser("Sr PI 2nd", "Britton", "LCA 1", "I-Beam Smart")
+    laser8.add_path_element(PathElement(name="stage 1", wavelength=407, lca="LCA 1", avg_power=0.1))
+    laser8.add_path_element(PathElement(name="stage 2", wavelength=407, lca="LCA 1", avg_power=0.1))
     lasers.append(laser8)
 
-    laser3 = Laser("Paladin", "Britton", "Zone L", "Paladin 355 for Raman")
-    laser3.add_path_element(PathElement(name="stage 1", wavelength=355, lca="Zone L", avg_power=4))
+    laser3 = Laser("Paladin", "Britton", "LCA 1", "Paladin 355 for Raman")
+    laser3.add_path_element(PathElement(name="stage 1", wavelength=355, lca="LCA 1", avg_power=4))
     lasers.append(laser3)
 
-    laser2 = Laser("Rb D1", "Britton", "Zone B", "Wavemeter reference")
-    laser2.add_path_element(PathElement(name="stage 1", wavelength=780, lca="Zone B", avg_power=0.08))
-    laser2.add_path_element(PathElement(name="stage 2", wavelength=780, lca="Zone B", avg_power=0.08))
+    laser2 = Laser("Rb D1", "Britton", "LCA 2", "Wavemeter reference")
+    laser2.add_path_element(PathElement(name="stage 1", wavelength=780, lca="LCA 2", avg_power=0.08))
+    laser2.add_path_element(PathElement(name="stage 2", wavelength=780, lca="LCA 2", avg_power=0.08))
     lasers.append(laser2)
 
-    laser9 = Laser("Yb+ D1", "Britton", "Zone B", "Description goes here")
-    laser9.add_path_element(PathElement(name="stage 1", wavelength=369, lca="Zone B", avg_power=0.0225))
-    laser9.add_path_element(PathElement(name="stage 2", wavelength=369, lca="Zone B", avg_power=0.523))
+    laser9 = Laser("Yb+ D1", "Britton", "LCA 2", "Description goes here")
+    laser9.add_path_element(PathElement(name="stage 1", wavelength=369, lca="LCA 2", avg_power=0.0225))
+    laser9.add_path_element(PathElement(name="stage 2", wavelength=369, lca="LCA 2", avg_power=0.523))
     lasers.append(laser9)
 
-    laser10 = Laser("Yb PI D1", "Britton", "Zone B", "Description goes here")
-    laser10.add_path_element(PathElement(name="stage 1", wavelength=399, lca="Zone B", avg_power=0.028))
-    laser10.add_path_element(PathElement(name="stage 2", wavelength=399, lca="Zone B", avg_power=0.528))
+    laser10 = Laser("Yb PI D1", "Britton", "LCA 2", "Description goes here")
+    laser10.add_path_element(PathElement(name="stage 1", wavelength=399, lca="LCA 2", avg_power=0.028))
+    laser10.add_path_element(PathElement(name="stage 2", wavelength=399, lca="LCA 2", avg_power=0.528))
     lasers.append(laser10)
 
-    laser12 = Laser("Yb+ F7/2 - [5/2] 5/2", "Britton", "Zone B", "Description goes here")
-    laser12.add_path_element(PathElement(name="stage 1", wavelength=636, lca="Zone B", avg_power=0.055))
-    laser12.add_path_element(PathElement(name="stage 2", wavelength=635, lca="Zone B", avg_power=0.555))
+    laser12 = Laser("Yb+ F7/2 - [5/2] 5/2", "Britton", "LCA 2", "Description goes here")
+    laser12.add_path_element(PathElement(name="stage 1", wavelength=636, lca="LCA 2", avg_power=0.055))
+    laser12.add_path_element(PathElement(name="stage 2", wavelength=635, lca="LCA 2", avg_power=0.555))
     lasers.append(laser12)
 
-    laser13 = Laser("Ba+ D3/2 - P1/2", "Britton", "Zone B", "Description goes here")
-    laser13.add_path_element(PathElement(name="stage 1", wavelength=650, lca="Zone B", avg_power=0.04))
-    laser13.add_path_element(PathElement(name="stage 2", wavelength=650, lca="Zone B", avg_power=0.54))
+    laser13 = Laser("Ba+ D3/2 - P1/2", "Britton", "LCA 2", "Description goes here")
+    laser13.add_path_element(PathElement(name="stage 1", wavelength=650, lca="LCA 2", avg_power=0.04))
+    laser13.add_path_element(PathElement(name="stage 2", wavelength=650, lca="LCA 2", avg_power=0.54))
     lasers.append(laser13)
 
-    laser14 = Laser("Yb+ D3/2 - [3/2] 1/2", "Britton", "Zone B", "Description goes here")
-    laser14.add_path_element(PathElement(name="stage 1", wavelength=935, lca="Zone B", avg_power=0.095))
-    laser14.add_path_element(PathElement(name="stage 2", wavelength=935, lca="Zone B", avg_power=0.595))
+    laser14 = Laser("Yb+ D3/2 - [3/2] 1/2", "Britton", "LCA 2", "Description goes here")
+    laser14.add_path_element(PathElement(name="stage 1", wavelength=935, lca="LCA 2", avg_power=0.095))
+    laser14.add_path_element(PathElement(name="stage 2", wavelength=935, lca="LCA 2", avg_power=0.595))
     lasers.append(laser14)
 
-    laser15 = Laser("Yb+ D3/2 - P3/2", "Britton", "Zone B", "Description goes here")
-    laser15.add_path_element(PathElement(name="stage 1", wavelength=1650, lca="Zone B", avg_power=0.04))
-    laser15.add_path_element(PathElement(name="stage 2", wavelength=1650, lca="Zone B", avg_power=0.54))
+    laser15 = Laser("Yb+ D3/2 - P3/2", "Britton", "LCA 2", "Description goes here")
+    laser15.add_path_element(PathElement(name="stage 1", wavelength=1650, lca="LCA 2", avg_power=0.04))
+    laser15.add_path_element(PathElement(name="stage 2", wavelength=1650, lca="LCA 2", avg_power=0.54))
     lasers.append(laser15)
 
     g = []

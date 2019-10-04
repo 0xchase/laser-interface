@@ -3,6 +3,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import *
 import sys
 import Interface
 import Simple
@@ -24,17 +25,30 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         icon2.addPixmap(QtGui.QPixmap("images/unchecked2.png"), QtGui.QIcon.Active)
         icon2.addPixmap(QtGui.QPixmap("images/checked2.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
 
+        lasers.sort(key=lambda x: x.stages[0].wavelength, reverse=False)
+        lasers.sort(key=lambda x: x.zone, reverse=False)
+
         x = 0
         y = -1
         for laser in lasers:
             laser.label = QLabel(laser.name)
             laser.label.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.name + "</span></p></body></html>")
+            self.lasernames.addWidget(laser.label)
 
             laser.desc = QLabel(laser.description)
             laser.desc.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.description + "</span></p></body></html>")
-
-            self.lasernames.addWidget(laser.label)
             self.descriptions.addWidget(laser.desc)
+
+            laser.wavelength = QLabel(laser.description + "wavelength")
+            laser.wavelength.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + str(laser.stages[0].wavelength) + "</span></p></body></html>")
+            laser.wavelength.setAlignment(Qt.AlignCenter)
+            self.laserwavelengths.addWidget(laser.wavelength)
+
+            laser.zone = QLabel(laser.description + "zone")
+            laser.zone.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + str(laser.stages[0].lca) + "</span></p></body></html>")
+            laser.zone.setAlignment(Qt.AlignCenter)
+            self.laserlcas.addWidget(laser.zone)
+
 
             laser.button = QPushButton(laser.name + "_onoff")
             laser.button.setText("")
@@ -123,6 +137,9 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.simpleForm.zonelred.hide()
         self.simpleForm.zonebred.hide()
 
+        self.simpleForm.zonelyellow.hide()
+        self.simpleForm.zonebyellow.hide()
+
         wavelengthsL = []
         wavelengthsB = []
 
@@ -130,10 +147,23 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             if laser.button.isChecked():
                 for stage in laser.stages:
                     if not stage.button.getState() == 0:
-                        if stage.lca == "Zone L":
-                            wavelengthsL.append(stage.wavelength)
-                        if stage.lca == "Zone B":
-                            wavelengthsB.append(stage.wavelength)
+                        if stage.lca == "LCA 1":
+                            if not stage.wavelength in wavelengthsL:
+                                wavelengthsL.append(stage.wavelength)
+                        if stage.lca == "LCA 2":
+                            if not stage.wavelength in wavelengthsB:
+                                wavelengthsB.append(stage.wavelength)
+                    if stage.button.getState() == 1:
+                        if stage.lca == "LCA 1":
+                            self.simpleForm.zonelyellow.show()
+                        if stage.lca == "LCA 2":
+                            self.simpleForm.zonebyellow.show()
+                    if stage.button.getState() == 2:
+                        if stage.lca == "LCA 1":
+                            self.simpleForm.zonelred.show()
+                        if stage.lca == "LCA 2":
+                            self.simpleForm.zonebred.show()
+
 
         sl = ""
         sb = ""
@@ -144,11 +174,10 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.simpleForm.freqlistl.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sl) + "</span></p></body></html>")
         self.simpleForm.freqlistb.setText("<html><head/><body><p><span style=\" color:#b0b7c1;\">" + str(sb) + "</span></p></body></html>")
 
-        self.warning.hide()
+        #self.warning.hide()
 
         if len(wavelengthsL) > 0:
             self.simpleForm.glasses1.setPixmap(redx)
-            self.simpleForm.zonelred.show()
 
         for w in wavelengthsL:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
@@ -162,7 +191,6 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
         if len(wavelengthsB) > 0:
             self.simpleForm.glasses1_2.setPixmap(redx)
-            self.simpleForm.zonebred.show()
 
         for w in wavelengthsB:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):

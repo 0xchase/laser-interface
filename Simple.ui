@@ -882,7 +882,7 @@
    <widget class="QLabel" name="label_18">
     <property name="geometry">
      <rect>
-      <x>970</x>
+      <x>980</x>
       <y>650</y>
       <width>91</width>
       <height>61</height>
@@ -895,15 +895,15 @@
      </font>
     </property>
     <property name="text">
-     <string>LCA 1</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LCA 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_19">
     <property name="geometry">
      <rect>
-      <x>1200</x>
-      <y>590</y>
-      <width>91</width>
+      <x>1190</x>
+      <y>580</y>
+      <width>101</width>
       <height>61</height>
      </rect>
     </property>
@@ -914,7 +914,7 @@
      </font>
     </property>
     <property name="text">
-     <string>LCA 2</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LCA 2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="element2_6">
@@ -1158,8 +1158,8 @@
    <widget class="QLabel" name="warning">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>290</y>
+      <x>180</x>
+      <y>280</y>
       <width>500</width>
       <height>500</height>
      </rect>
@@ -1192,6 +1192,161 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="zonelyellow">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>90</y>
+      <width>491</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>500</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/zone1yellow2_rotated.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="zonebred_2">
+    <property name="geometry">
+     <rect>
+      <x>1310</x>
+      <y>540</y>
+      <width>491</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>500</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/zone2red2_rotated.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="zonebyellow">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>90</y>
+      <width>491</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>500</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/zone2yellow2_rotated.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_22">
+    <property name="geometry">
+     <rect>
+      <x>1197</x>
+      <y>620</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Britton&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_24">
+    <property name="geometry">
+     <rect>
+      <x>991</x>
+      <y>688</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Linke&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
    <zorder>background</zorder>
    <zorder>element2_7</zorder>
    <zorder>element2_8</zorder>
@@ -1212,13 +1367,9 @@
    <zorder>label_10</zorder>
    <zorder>label_11</zorder>
    <zorder>label_12</zorder>
-   <zorder>zonebred</zorder>
-   <zorder>zonelred</zorder>
    <zorder>element2_5</zorder>
    <zorder>label_16</zorder>
    <zorder>freqlistb</zorder>
-   <zorder>label_18</zorder>
-   <zorder>label_19</zorder>
    <zorder>element2_6</zorder>
    <zorder>label_14</zorder>
    <zorder>label_15</zorder>
@@ -1226,7 +1377,16 @@
    <zorder>label_20</zorder>
    <zorder>label_21</zorder>
    <zorder>label_23</zorder>
+   <zorder>zonelyellow</zorder>
+   <zorder>zonebred_2</zorder>
+   <zorder>zonebyellow</zorder>
+   <zorder>zonelred</zorder>
+   <zorder>zonebred</zorder>
+   <zorder>label_19</zorder>
    <zorder>warning</zorder>
+   <zorder>label_18</zorder>
+   <zorder>label_22</zorder>
+   <zorder>label_24</zorder>
   </widget>
  </widget>
  <resources/>
