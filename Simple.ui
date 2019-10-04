@@ -17,40 +17,6 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="glasses1transparent">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>270</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="background">
     <property name="geometry">
      <rect>
@@ -126,6 +92,31 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
+      <widget class="QLabel" name="glasses1">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>images/checkgreen2.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="glasses2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -143,32 +134,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/eye.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="glasses5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>images/glassesclear.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -193,7 +159,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesyellow.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -218,7 +184,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesblue.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -226,7 +192,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="glasses1">
+      <widget class="QLabel" name="glasses5">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -243,7 +209,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesred.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -251,77 +217,6 @@
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QLabel" name="glasses2transparent">
-    <property name="geometry">
-     <rect>
-      <x>168</x>
-      <y>270</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="glasses5transparent">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>528</x>
-      <y>270</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
    </widget>
    <widget class="QLabel" name="element2_2">
     <property name="geometry">
@@ -378,74 +273,6 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Wavelengths&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="glasses3transparent">
-    <property name="geometry">
-     <rect>
-      <x>288</x>
-      <y>270</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="glasses4transparent">
-    <property name="geometry">
-     <rect>
-      <x>408</x>
-      <y>270</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
@@ -498,43 +325,6 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="glasses5transparent2">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>529</x>
-      <y>680</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
@@ -565,6 +355,31 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
+      <widget class="QLabel" name="glasses1_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>images/checkgreen2.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="glasses2_2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -582,32 +397,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/eye.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="glasses5_2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>images/glassesclear.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -632,7 +422,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesyellow.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -657,7 +447,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesblue.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -665,7 +455,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="glasses1_2">
+      <widget class="QLabel" name="glasses5_2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -682,7 +472,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>images/glassesred.png</pixmap>
+        <pixmap>images/checkgreen2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -690,74 +480,6 @@
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QLabel" name="glasses4transparent2">
-    <property name="geometry">
-     <rect>
-      <x>409</x>
-      <y>680</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="glasses2transparent2">
-    <property name="geometry">
-     <rect>
-      <x>169</x>
-      <y>680</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
    </widget>
    <widget class="QLabel" name="element2_3">
     <property name="geometry">
@@ -785,74 +507,6 @@
     </property>
     <property name="pixmap">
      <pixmap>images/gui1element1.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="glasses3transparent2">
-    <property name="geometry">
-     <rect>
-      <x>289</x>
-      <y>680</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="glasses1transparent2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>680</y>
-      <width>120</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/ghost90.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1504,8 +1158,8 @@
    <widget class="QLabel" name="warning">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>230</y>
+      <x>480</x>
+      <y>290</y>
       <width>500</width>
       <height>500</height>
      </rect>
@@ -1539,27 +1193,17 @@
     </property>
    </widget>
    <zorder>background</zorder>
-   <zorder>element2_8</zorder>
    <zorder>element2_7</zorder>
+   <zorder>element2_8</zorder>
    <zorder>element2_3</zorder>
    <zorder>element2</zorder>
    <zorder>horizontalLayoutWidget</zorder>
-   <zorder>glasses2transparent</zorder>
-   <zorder>glasses5transparent</zorder>
-   <zorder>glasses1transparent</zorder>
    <zorder>element2_2</zorder>
    <zorder>label_4</zorder>
-   <zorder>glasses3transparent</zorder>
-   <zorder>glasses4transparent</zorder>
    <zorder>element3_3</zorder>
    <zorder>label_6</zorder>
    <zorder>label_7</zorder>
    <zorder>horizontalLayoutWidget_2</zorder>
-   <zorder>glasses4transparent2</zorder>
-   <zorder>glasses2transparent2</zorder>
-   <zorder>glasses3transparent2</zorder>
-   <zorder>glasses1transparent2</zorder>
-   <zorder>glasses5transparent2</zorder>
    <zorder>freqlistl</zorder>
    <zorder>warning_2</zorder>
    <zorder>element2_4</zorder>

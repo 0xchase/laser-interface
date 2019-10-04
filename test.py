@@ -2,6 +2,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QPixmap
 import sys
 import Interface
 import Simple
@@ -92,18 +93,32 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.freqszone1 = []
         self.freqszone2 = []
 
-        self.simpleForm.glasses1transparent.hide()
-        self.simpleForm.glasses2transparent.hide()
-        self.simpleForm.glasses3transparent.hide()
-        self.simpleForm.glasses4transparent.hide()
-        self.simpleForm.glasses5transparent.hide()
+        greencheck = QPixmap("images/checkgreen.png")
+        redx = QPixmap("images/X.png")
 
+        self.simpleForm.glasses1.setPixmap(greencheck)
+        self.simpleForm.glasses2.setPixmap(greencheck)
+        self.simpleForm.glasses3.setPixmap(greencheck)
+        self.simpleForm.glasses4.setPixmap(greencheck)
+        self.simpleForm.glasses5.setPixmap(greencheck)
 
-        self.simpleForm.glasses1transparent2.hide()
-        self.simpleForm.glasses2transparent2.hide()
-        self.simpleForm.glasses3transparent2.hide()
-        self.simpleForm.glasses4transparent2.hide()
-        self.simpleForm.glasses5transparent2.hide()
+        self.simpleForm.glasses1_2.setPixmap(greencheck)
+        self.simpleForm.glasses2_2.setPixmap(greencheck)
+        self.simpleForm.glasses3_2.setPixmap(greencheck)
+        self.simpleForm.glasses4_2.setPixmap(greencheck)
+        self.simpleForm.glasses5_2.setPixmap(greencheck)
+
+#        self.simpleForm.glasses1transparent.hide()
+#        self.simpleForm.glasses2transparent.hide()
+#        self.simpleForm.glasses3transparent.hide()
+#        self.simpleForm.glasses4transparent.hide()
+#        self.simpleForm.glasses5transparent.hide()
+#
+#        self.simpleForm.glasses1transparent2.hide()
+#        self.simpleForm.glasses2transparent2.hide()
+#        self.simpleForm.glasses3transparent2.hide()
+#        self.simpleForm.glasses4transparent2.hide()
+#        self.simpleForm.glasses5transparent2.hide()
 
         self.simpleForm.zonelred.hide()
         self.simpleForm.zonebred.hide()
@@ -132,46 +147,45 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.warning.hide()
 
         if len(wavelengthsL) > 0:
-            self.simpleForm.glasses1transparent.show()
+            self.simpleForm.glasses1.setPixmap(redx)
             self.simpleForm.zonelred.show()
 
         for w in wavelengthsL:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
-                self.simpleForm.glasses2transparent.show()
+                self.simpleForm.glasses2.setPixmap(redx)
             if not (190 <= w <= 400 or 808 <= w <= 840 or 840 <= w <= 950 or 950 <= w <= 1080 or 1080 <= w <= 1090):
-                self.simpleForm.glasses3transparent.show()
+                self.simpleForm.glasses3.setPixmap(redx)
             if not (190 <= w <= 400 or 651 <= w <= 670 or 671 <= w <= 715 or 680 <= w <= 710 or 690 <= w <= 700):
-                self.simpleForm.glasses4transparent.show()
+                self.simpleForm.glasses4.setPixmap(redx)
             if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
-                self.simpleForm.glasses5transparent.show()
+                self.simpleForm.glasses5.setPixmap(redx)
 
         if len(wavelengthsB) > 0:
-            self.simpleForm.glasses1transparent2.show()
+            self.simpleForm.glasses1_2.setPixmap(redx)
             self.simpleForm.zonebred.show()
 
         for w in wavelengthsB:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
-                self.simpleForm.glasses2transparent2.show()
+                self.simpleForm.glasses2_2.setPixmap(redx)
             if not (190 <= w <= 400 or 808 <= w <= 840 or 840 <= w <= 950 or 950 <= w <= 1080 or 1080 <= w <= 1090):
-                self.simpleForm.glasses3transparent2.show()
+                self.simpleForm.glasses3_2.setPixmap(redx)
             if not (190 <= w <= 400 or 651 <= w <= 670 or 671 <= w <= 715 or 680 <= w <= 710 or 690 <= w <= 700):
-                self.simpleForm.glasses4transparent2.show()
+                self.simpleForm.glasses4_2.setPixmap(redx)
             if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
-                self.simpleForm.glasses5transparent2.show()
+                self.simpleForm.glasses5_2.setPixmap(redx)
 
-        if (self.simpleForm.glasses1transparent.isVisible() and
-            self.simpleForm.glasses2transparent.isVisible() and
-            self.simpleForm.glasses3transparent.isVisible() and
-            self.simpleForm.glasses4transparent.isVisible() and
-            self.simpleForm.glasses5transparent.isVisible()):
-            self.simpleForm.warning.show()
-
-        if (self.simpleForm.glasses1transparent2.isVisible() and
-            self.simpleForm.glasses2transparent2.isVisible() and
-            self.simpleForm.glasses3transparent2.isVisible() and
-            self.simpleForm.glasses4transparent2.isVisible() and
-            self.simpleForm.glasses5transparent2.isVisible()):
-            self.simpleForm.warning.show()
+#        if (self.simpleForm.glasses1transparent.isVisible() and
+#            self.simpleForm.glasses2transparent.isVisible() and
+#            self.simpleForm.glasses3transparent.isVisible() and
+#            self.simpleForm.glasses4transparent.isVisible() and
+#            self.simpleForm.glasses5transparent.isVisible()):
+#            self.simpleForm.warning.show()
+#        if (self.simpleForm.glasses1transparent2.isVisible() and
+#            self.simpleForm.glasses2transparent2.isVisible() and
+#            self.simpleForm.glasses3transparent2.isVisible() and
+#            self.simpleForm.glasses4transparent2.isVisible() and
+#            self.simpleForm.glasses5transparent2.isVisible()):
+#            self.simpleForm.warning.show()
 
     def btnHovered(self):
         try:
