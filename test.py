@@ -109,14 +109,13 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
         greencheck = QPixmap("images/checkgreen.png")
         redx = QPixmap("images/X.png")
+        t = QPixmap("images/transparent.png")
 
-        self.simpleForm.glasses1.setPixmap(greencheck)
         self.simpleForm.glasses2.setPixmap(greencheck)
         self.simpleForm.glasses3.setPixmap(greencheck)
         self.simpleForm.glasses4.setPixmap(greencheck)
         self.simpleForm.glasses5.setPixmap(greencheck)
 
-        self.simpleForm.glasses1_2.setPixmap(greencheck)
         self.simpleForm.glasses2_2.setPixmap(greencheck)
         self.simpleForm.glasses3_2.setPixmap(greencheck)
         self.simpleForm.glasses4_2.setPixmap(greencheck)
@@ -139,6 +138,9 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
         self.simpleForm.zonelyellow.hide()
         self.simpleForm.zonebyellow.hide()
+
+        self.simpleForm.nohazard1.hide()
+        self.simpleForm.nohazard2.hide()
 
         wavelengthsL = []
         wavelengthsB = []
@@ -176,8 +178,12 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
 
         #self.warning.hide()
 
-        if len(wavelengthsL) > 0:
-            self.simpleForm.glasses1.setPixmap(redx)
+        if len(wavelengthsL) == 0:
+            self.simpleForm.nohazard1.show()
+            self.simpleForm.glasses2.setPixmap(t)
+            self.simpleForm.glasses3.setPixmap(t)
+            self.simpleForm.glasses4.setPixmap(t)
+            self.simpleForm.glasses5.setPixmap(t)
 
         for w in wavelengthsL:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):
@@ -189,8 +195,12 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             if not (180 <= w <= 534 or 720 <= w <= 730 or 730 <= w <= 740 or 740 <= w <= 1070):
                 self.simpleForm.glasses5.setPixmap(redx)
 
-        if len(wavelengthsB) > 0:
-            self.simpleForm.glasses1_2.setPixmap(redx)
+        if len(wavelengthsB) == 0:
+            self.simpleForm.nohazard2.show()
+            self.simpleForm.glasses2_2.setPixmap(t)
+            self.simpleForm.glasses3_2.setPixmap(t)
+            self.simpleForm.glasses4_2.setPixmap(t)
+            self.simpleForm.glasses5_2.setPixmap(t)
 
         for w in wavelengthsB:
             if not (190 <= w <= 398 or 9000 <= w <= 11000):

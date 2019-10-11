@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>-20</y>
+      <y>0</y>
       <width>1511</width>
       <height>1171</height>
      </rect>
@@ -54,7 +54,7 @@
     <property name="geometry">
      <rect>
       <x>49</x>
-      <y>268</y>
+      <y>438</y>
       <width>601</width>
       <height>120</height>
      </rect>
@@ -85,37 +85,12 @@
     <property name="geometry">
      <rect>
       <x>49</x>
-      <y>278</y>
+      <y>448</y>
       <width>601</width>
       <height>102</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="glasses1">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>images/checkgreen2.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QLabel" name="glasses2">
        <property name="sizePolicy">
@@ -222,7 +197,7 @@
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>150</y>
+      <y>320</y>
       <width>171</width>
       <height>271</height>
      </rect>
@@ -255,8 +230,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>150</y>
+      <x>680</x>
+      <y>320</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -270,7 +245,7 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Wavelengths&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Lasers On Now&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -329,7 +304,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>550</y>
+      <y>680</y>
       <width>391</width>
       <height>61</height>
      </rect>
@@ -348,37 +323,12 @@
     <property name="geometry">
      <rect>
       <x>49</x>
-      <y>686</y>
+      <y>816</y>
       <width>601</width>
       <height>102</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="glasses1_2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>images/checkgreen2.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QLabel" name="glasses2_2">
        <property name="sizePolicy">
@@ -485,7 +435,7 @@
     <property name="geometry">
      <rect>
       <x>49</x>
-      <y>676</y>
+      <y>806</y>
       <width>601</width>
       <height>121</height>
      </rect>
@@ -516,7 +466,7 @@
     <property name="geometry">
      <rect>
       <x>690</x>
-      <y>200</y>
+      <y>370</y>
       <width>131</width>
       <height>201</height>
      </rect>
@@ -537,7 +487,7 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
    </widget>
-   <widget class="QLabel" name="warning_2">
+   <widget class="QLabel" name="map">
     <property name="geometry">
      <rect>
       <x>880</x>
@@ -568,7 +518,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/map5_rotated.png</pixmap>
+     <pixmap>images/map6.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -578,7 +528,7 @@
     <property name="geometry">
      <rect>
       <x>48</x>
-      <y>209</y>
+      <y>379</y>
       <width>601</width>
       <height>51</height>
      </rect>
@@ -605,35 +555,11 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>53</x>
-      <y>210</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Noto Sans CJK HK</family>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#b0b7c1;&quot;&gt;None&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>169</x>
-      <y>210</y>
+      <x>79</x>
+      <y>380</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -656,8 +582,8 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>287</x>
-      <y>210</y>
+      <x>220</x>
+      <y>380</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -680,8 +606,8 @@
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>406</x>
-      <y>210</y>
+      <x>359</x>
+      <y>380</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -704,8 +630,8 @@
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>210</y>
+      <x>500</x>
+      <y>380</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -756,7 +682,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/zone2red2_rotated.png</pixmap>
+     <pixmap>images/map6red2.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -793,7 +719,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/zone1red2_rotated.png</pixmap>
+     <pixmap>images/map6red1.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -803,7 +729,7 @@
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>560</y>
+      <y>690</y>
       <width>171</width>
       <height>271</height>
      </rect>
@@ -836,8 +762,8 @@
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>687</x>
-      <y>560</y>
+      <x>680</x>
+      <y>690</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -851,14 +777,14 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Wavelengths&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Lasers On Now&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="freqlistb">
     <property name="geometry">
      <rect>
       <x>690</x>
-      <y>610</y>
+      <y>740</y>
       <width>131</width>
       <height>201</height>
      </rect>
@@ -921,7 +847,7 @@
     <property name="geometry">
      <rect>
       <x>49</x>
-      <y>619</y>
+      <y>749</y>
       <width>601</width>
       <height>51</height>
      </rect>
@@ -951,8 +877,8 @@
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>288</x>
-      <y>620</y>
+      <x>221</x>
+      <y>750</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -975,8 +901,8 @@
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>521</x>
-      <y>620</y>
+      <x>501</x>
+      <y>750</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -999,8 +925,8 @@
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
-      <x>407</x>
-      <y>620</y>
+      <x>360</x>
+      <y>750</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -1020,35 +946,11 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_20">
-    <property name="geometry">
-     <rect>
-      <x>54</x>
-      <y>620</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Noto Sans CJK HK</family>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#b0b7c1;&quot;&gt;None&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_21">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>620</y>
+      <x>80</x>
+      <y>750</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -1072,7 +974,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>130</y>
+      <y>300</y>
       <width>841</width>
       <height>311</height>
      </rect>
@@ -1106,7 +1008,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>140</y>
+      <y>310</y>
       <width>391</width>
       <height>61</height>
      </rect>
@@ -1125,7 +1027,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>540</y>
+      <y>670</y>
       <width>841</width>
       <height>311</height>
      </rect>
@@ -1158,8 +1060,8 @@
    <widget class="QLabel" name="warning">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>280</y>
+      <x>770</x>
+      <y>570</y>
       <width>500</width>
       <height>500</height>
      </rect>
@@ -1223,44 +1125,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/zone1yellow2_rotated.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="zonebred_2">
-    <property name="geometry">
-     <rect>
-      <x>1310</x>
-      <y>540</y>
-      <width>491</width>
-      <height>871</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>500</width>
-      <height>1000</height>
-     </size>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>images/zone2red2_rotated.png</pixmap>
+     <pixmap>images/map6yellow1.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1297,7 +1162,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/zone2yellow2_rotated.png</pixmap>
+     <pixmap>images/map6yellow.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1347,6 +1212,156 @@
      <enum>Qt::RichText</enum>
     </property>
    </widget>
+   <widget class="QLabel" name="label_25">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>470</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Safe Zone&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_26">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>510</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;B0223 Entrance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="warning_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>500</width>
+      <height>500</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/warningsign.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_27">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>40</y>
+      <width>561</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>100</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;DANGER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nohazard1">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>470</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;No Hazard&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nohazard2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>840</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK HK</family>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;No Hazard&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <zorder>background</zorder>
    <zorder>element2_7</zorder>
    <zorder>element2_8</zorder>
@@ -1360,9 +1375,8 @@
    <zorder>label_7</zorder>
    <zorder>horizontalLayoutWidget_2</zorder>
    <zorder>freqlistl</zorder>
-   <zorder>warning_2</zorder>
+   <zorder>map</zorder>
    <zorder>element2_4</zorder>
-   <zorder>label_8</zorder>
    <zorder>label_9</zorder>
    <zorder>label_10</zorder>
    <zorder>label_11</zorder>
@@ -1374,11 +1388,9 @@
    <zorder>label_14</zorder>
    <zorder>label_15</zorder>
    <zorder>label_17</zorder>
-   <zorder>label_20</zorder>
    <zorder>label_21</zorder>
    <zorder>label_23</zorder>
    <zorder>zonelyellow</zorder>
-   <zorder>zonebred_2</zorder>
    <zorder>zonebyellow</zorder>
    <zorder>zonelred</zorder>
    <zorder>zonebred</zorder>
@@ -1387,6 +1399,12 @@
    <zorder>label_18</zorder>
    <zorder>label_22</zorder>
    <zorder>label_24</zorder>
+   <zorder>label_25</zorder>
+   <zorder>label_26</zorder>
+   <zorder>warning_2</zorder>
+   <zorder>label_27</zorder>
+   <zorder>nohazard1</zorder>
+   <zorder>nohazard2</zorder>
   </widget>
  </widget>
  <resources/>
