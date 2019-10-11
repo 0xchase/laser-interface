@@ -219,7 +219,7 @@ class Ui_MainWindow(object):
         self.element2_3.setScaledContents(True)
         self.element2_3.setObjectName("element2_3")
         self.freqlistl = QtWidgets.QLabel(self.centralwidget)
-        self.freqlistl.setGeometry(QtCore.QRect(690, 380, 131, 201))
+        self.freqlistl.setGeometry(QtCore.QRect(690, 400, 131, 201))
         font = QtGui.QFont()
         font.setFamily("Noto Sans CJK HK")
         font.setPointSize(12)

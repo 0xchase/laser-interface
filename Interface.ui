@@ -122,7 +122,7 @@
      <rect>
       <x>210</x>
       <y>60</y>
-      <width>151</width>
+      <width>191</width>
       <height>811</height>
      </rect>
     </property>
@@ -153,7 +153,7 @@
      <rect>
       <x>220</x>
       <y>130</y>
-      <width>131</width>
+      <width>171</width>
       <height>731</height>
      </rect>
     </property>
@@ -542,7 +542,7 @@
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>430</x>
       <y>70</y>
       <width>181</width>
       <height>51</height>
@@ -557,15 +557,15 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b0b7c1;&quot;&gt;Comments&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="element3_6">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>420</x>
       <y>60</y>
-      <width>271</width>
+      <width>231</width>
       <height>811</height>
      </rect>
     </property>
@@ -594,9 +594,9 @@
    <widget class="QWidget" name="gridLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>430</x>
       <y>130</y>
-      <width>251</width>
+      <width>211</width>
       <height>731</height>
      </rect>
     </property>

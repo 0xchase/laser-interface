@@ -16,6 +16,7 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
         self.setupUi(self)
         self.simpleForm = simpleForm
 
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
         icon = QtGui.QIcon("images/boxgreen.png")
 
@@ -35,8 +36,9 @@ class ExampleApp(QtWidgets.QMainWindow, Interface.Ui_MainWindow):
             laser.label.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.name + "</span></p></body></html>")
             self.lasernames.addWidget(laser.label)
 
-            laser.desc = QLabel(laser.description)
-            laser.desc.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + laser.description + "</span></p></body></html>")
+            laser.desc = QTextEdit(laser.description)
+            laser.desc.setText("<html><head/><body><p><span style=\"color:#b0b7c1;\">" + " " + "</span></p></body></html>")
+            laser.desc.setStyleSheet("background: rgba(58,63,72,0%);color:#b0b7c1")
             self.descriptions.addWidget(laser.desc)
 
             laser.wavelength = QLabel(laser.description + "wavelength")
